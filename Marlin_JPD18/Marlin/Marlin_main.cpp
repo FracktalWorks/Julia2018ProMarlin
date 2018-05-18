@@ -14163,7 +14163,6 @@ void stop() {
         {
             SERIAL_ECHOLNPGM("//action:pause");
             powerPanicActive = true;
-            int bedTarget = thermalManager.degTargetBed();
             thermalManager.disable_all_heaters();
             clear_command_queue(); //cleared ques commands
             quickstop_stepper(); //clears stepper buffer
@@ -14432,6 +14431,10 @@ void setup() {
 
   #if ENABLED(USE_WATCHDOG)
     watchdog_init();
+  #endif
+
+  #if ENABLED(POWERPANIC)
+    setup_PowerPanic();
   #endif
 }
 
