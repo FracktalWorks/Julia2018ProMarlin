@@ -491,8 +491,8 @@
 
 // @section homing
 
-#define HOME_OFFSET_X -35
-#define HOME_OFFSET_Y 0
+#define HOME_OFFSET_X -20
+#define HOME_OFFSET_Y -10
 
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
@@ -804,7 +804,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR true
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -828,8 +828,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 450 //total Travel Area
-#define Y_BED_SIZE 420 //total travel are
+#define X_BED_SIZE 420 //total Travel Area
+#define Y_BED_SIZE 410 //total travel are
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -837,7 +837,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 380
+#define Z_MAX_POS 405
 
 /**
  * Software Endstops

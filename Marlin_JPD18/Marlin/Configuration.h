@@ -496,8 +496,8 @@
 
 // @section homing
 
-#define HOME_OFFSET_X -35
-#define HOME_OFFSET_Y 0
+#define HOME_OFFSET_X -40
+#define HOME_OFFSET_Y -10
 
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
@@ -575,7 +575,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 100, 100, 50, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 500, 500, 50, 10000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -585,9 +585,22 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          100    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  2000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves
+
+/**
+ * Default Jerk (mm/s)
+ * Override with M205 X Y Z E
+ *
+ * "Jerk" specifies the minimum speed change that requires acceleration.
+ * When changing speed and direction, if the difference is less than the
+ * value set here, it may happen instantaneously.
+ */
+#define DEFAULT_XJERK                  2.0
+#define DEFAULT_YJERK                  2.0
+#define DEFAULT_ZJERK                  0.3
+#define DEFAULT_EJERK                  5.0
 
 /**
  * Default Jerk (mm/s)
@@ -809,7 +822,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR true
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -833,7 +846,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 440 //total Travel Area
+#define X_BED_SIZE 420 //total Travel Area
 #define Y_BED_SIZE 410 //total travel are
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
